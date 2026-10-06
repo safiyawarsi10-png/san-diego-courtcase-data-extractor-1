@@ -6,6 +6,41 @@
 
 ---
 
+## What this has produced
+
+Using this toolkit, we assembled every § 190.2-eligible defendant aged 18 to 25 charged
+in San Diego County during the full 2003–2017 tenure of District Attorney Bonnie Dumanis.
+91 defendants. A population, not a sample.
+
+**73.2% of eligible Black defendants were charged with a special circumstance, against
+52.1% of eligible non-Black defendants.**
+
+| Gap | Rate ratio | Odds ratio | Bounded range |
+|---|---|---|---|
+| 21.1 points | 1.40 | 2.51 | 2.21 – 2.71 |
+
+Roughly three of every four eligible Black defendants faced a charge carrying life without
+parole or death. Roughly one of every two eligible non-Black defendants did. The bounded
+range reflects every possible resolution of the two defendants whose race could not be
+verified; none approaches parity. The disparity is created at charging and is not offset
+at sentencing.
+
+**Why that is actionable.** Under Penal Code § 745(a)(3), aggregate charging data is
+legally operative: a defendant can establish a Racial Justice Act violation by showing he
+was charged more seriously than similarly situated defendants of other races, at a
+preponderance standard, with no showing of intent. The constraint has never been the law.
+It is the data, which is held by the offices whose decisions are being challenged.
+
+**Status.** These findings are *slated for use* in Racial Justice Act challenges in
+Dumanis-era capital cases. Nothing in this repository has been filed in or adjudicated by
+any court, and no finding has been made on it.
+
+Full analysis: *The Criminalization of Culture: Using Gang Enhancements to Insert a Racial
+Bias in the Courtroom* (Rising & Warsi). Method, validation, and reproduction instructions
+below.
+
+---
+
 ## 0. Core goal
 
 **Purpose**  
@@ -30,7 +65,7 @@ This document outlines the research process and tools used by our team and volun
 Once every record has a verified incident date, a birth‑year, the sentence, and source URLs, you can pivot and filter across groups, and run statistics (rate ratios, chi‑square, logistic regression) to test for differences that are **material and reproducible**.
 
 **Our pipeline, at a glance**  
-Court lookup → GPT‑assisted news/legal research → Derived fields (ages, bands, §190.2 status) → QC flags.
+Court lookup → Claude‑assisted news/legal research → Derived fields (ages, bands, §190.2 status) → QC flags.
 
 ---
 
@@ -53,7 +88,7 @@ This scale shift makes systematic, reproducible fairness analysis feasible for s
 ### Background (plain English)
 This toolkit supports research into potential **racial bias in defendant sentencing**, specifically examining how **age intersects with race** in defendant case outcomes.
 
-- **Research Question:** Does sentencing vary by race for defendants who were **juveniles (<18)** or **emerging adults (18–26)** when they committed serious incidents in San Diego?  
+- **Research Question:** Does sentencing vary by race for defendants who were **juveniles (<18)** or **emerging adults (18–25)** when they committed serious incidents in San Diego?  
 - **Data Scope:** Approximately 1,300 case numbers covering San Diego defendant cases.  
 - **Key variables:** demographics, incident details, outcomes, age analysis, filing dates, locations, and docket links.
 
